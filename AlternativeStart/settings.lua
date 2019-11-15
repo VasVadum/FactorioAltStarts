@@ -34,8 +34,18 @@ data:extend({
 		localised_description = "Choose whether to start with steam power or solar power or even improved solar.",
 		setting_type = "runtime-global",
 		default_value = "None",
-		allowed_values = {"None","Steam","Solar","Super Solar"},
+		allowed_values = {"None","Steam","Solar","Super Solar","Insane Solar"},
 		order = 3
+	},
+	{
+		-- 4x the substations
+		type = "bool-setting",
+		name = "basic-kit-moresubs",
+		localised_name = "More Substations?",
+		localised_description = "Should we multiply the amount of substations you get by 4? (Only works with options that give substations)",
+		setting_type = "runtime-global",
+		default_value = false,
+		order = 4
 	},
 	{
 		-- Easy start boost
@@ -46,7 +56,7 @@ data:extend({
 		setting_type = "runtime-global",
 		default_value = "Nope",
 		allowed_values = {"Nope","Extra Resources","Power Armor & Modules","Research Equipment","Power Armor, Modules, & Resources","Ultimate Easy Start"},
-		order = 4
+		order = 5
 	},
 	{
 		-- Start with bots
@@ -57,7 +67,7 @@ data:extend({
 		setting_type = "runtime-global",
 		default_value = "Nope",
 		allowed_values = {"Nope","(pending)","Basic","Lots","Too Many","Too Many ++"},
-		order = 5
+		order = 6
 	},
 	{
 		-- Add chests with your robots
@@ -67,7 +77,7 @@ data:extend({
 		localised_description = "Would you like to add robot logistical chests to your robot selection?",
 		setting_type = "runtime-global",
 		default_value = false,
-		order = 6
+		order = 7
 	},
 	{
 		-- Add a car
@@ -77,8 +87,8 @@ data:extend({
 		localised_description = "Each vehicle also comes with a little bit of solid fuel.",
 		setting_type = "runtime-global",
 		default_value = "None",
-		allowed_values = {"None","Car","Tank","Pending"},
-		order = 7
+		allowed_values = {"None","Car","Tank","Beta: Train"},
+		order = 8
 	},
 	{
 		-- Start with landfill
@@ -90,7 +100,7 @@ data:extend({
 		default_value = 0,
 		maximum_value = 1000,
 		minimum_value = 0,
-		order = 8
+		order = 9
 	},
 	{
 		-- Useless money
@@ -100,6 +110,6 @@ data:extend({
 		localised_description = "So, you're so paranoid that you actually decided to bring your money with you even though its useless here!",
 		setting_type = "runtime-global",
 		default_value = false,
-		order = 9
+		order = 10
 	}
 })

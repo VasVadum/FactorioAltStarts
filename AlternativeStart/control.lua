@@ -8,6 +8,7 @@
 local BASE_KIT=			settings.global["basic-kit-base"].value
 local EQUIPME=			settings.global["basic-kit-equipment"].value
 local POWER_KIT=		settings.global["basic-kit-power"].value
+local MORE_SUBS=		settings.global["basic-kit-moresubs"].value
 local ADD_EASY=			settings.global["basic-kit-easy"].value
 local ADD_ROBOTS=		settings.global["basic-kit-robot"].value
 local ADD_ROCHEST=		settings.global["basic-kit-robotchests"].value
@@ -68,11 +69,27 @@ if POWER_KIT == "Steam" then
 elseif POWER_KIT == "Solar" then
 	table.insert(kit,{name="solar-panel",count=6})
 	table.insert(kit,{name="accumulator",count=3})
-	table.insert(kit,{name="substation",count=2})
+	if MORE_SUBS then
+		table.insert(kit,{name="substation",count=8})
+	else
+		table.insert(kit,{name="substation",count=2})
+	end
 elseif POWER_KIT == "Super Solar" then
 	table.insert(kit,{name="solar-panel",count=12})
 	table.insert(kit,{name="accumulator",count=6})
-	table.insert(kit,{name="substation",count=4})
+	if MORE_SUBS then
+		table.insert(kit,{name="substation",count=16})
+	else
+		table.insert(kit,{name="substation",count=4})
+	end
+elseif POWER_KIT == "Insane Solar" then
+	table.insert(kit,{name="solar-panel",count=24})
+	table.insert(kit,{name="accumulator",count=12})
+	if MORE_SUBS then
+		table.insert(kit,{name="substation",count=32})
+	else
+		table.insert(kit,{name="substation",count=8})
+	end
 end
 
 if ADD_EASY == "Extra Resources" then
@@ -82,8 +99,8 @@ elseif ADD_EASY == "Power Armor & Modules" then
 	table.insert(kit,{name="modular-armor",count=1})
 	table.insert(kit,{name="energy-shield-equipment",count=1})
 	table.insert(kit,{name="night-vision-equipment",count=1})
-	table.insert(kit,{name="battery-equipment",count=2})
-	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="battery-equipment",count=1})
+	table.insert(kit,{name="solar-panel-equipment",count=7})
 	table.insert(kit,{name="exoskeleton-equipment",count=1})
 elseif ADD_EASY == "Research Equipment" then
 	table.insert(kit,{name="lab",count=1})
@@ -95,8 +112,8 @@ elseif ADD_EASY == "Power Armor, Modules, & Resources" then
 	table.insert(kit,{name="modular-armor",count=1})
 	table.insert(kit,{name="energy-shield-equipment",count=1})
 	table.insert(kit,{name="night-vision-equipment",count=1})
-	table.insert(kit,{name="battery-equipment",count=2})
-	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="battery-equipment",count=1})
+	table.insert(kit,{name="solar-panel-equipment",count=7})
 	table.insert(kit,{name="exoskeleton-equipment",count=1})
 elseif ADD_EASY == "Ultimate Easy Start" then
 	table.insert(kit,{name="iron-plate",count=46})
@@ -104,8 +121,8 @@ elseif ADD_EASY == "Ultimate Easy Start" then
 	table.insert(kit,{name="modular-armor",count=1})
 	table.insert(kit,{name="energy-shield-equipment",count=1})
 	table.insert(kit,{name="night-vision-equipment",count=1})
-	table.insert(kit,{name="battery-equipment",count=2})
-	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="battery-equipment",count=1})
+	table.insert(kit,{name="solar-panel-equipment",count=7})
 	table.insert(kit,{name="exoskeleton-equipment",count=1})
 	table.insert(kit,{name="lab",count=1})
 	table.insert(kit,{name="science-pack-1",count=50})
@@ -131,7 +148,7 @@ elseif ADD_ROBOTS == "Lots" then
 		table.insert(kit,{name="logistic-chest-requester",count=6})
 	end
 elseif ADD_ROBOTS == "Too Many" then
-	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="roboport",count=2})
 	table.insert(kit,{name="logistic-robot",count=50})
 	table.insert(kit,{name="construction-robot",count=10})
 	if ADD_ROCHEST then
@@ -140,7 +157,7 @@ elseif ADD_ROBOTS == "Too Many" then
 		table.insert(kit,{name="logistic-chest-requester",count=10})
 	end
 elseif ADD_ROBOTS == "Too Many ++" then
-	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="roboport",count=4})
 	table.insert(kit,{name="logistic-robot",count=100})
 	table.insert(kit,{name="construction-robot",count=20})
 	if ADD_ROCHEST then
@@ -158,6 +175,15 @@ if ADD_CAR == "Car" then
 elseif ADD_CAR == "Tank" then
 	table.insert(kit,{name="tank",count=1})
 	table.insert(kit,{name="solid-fuel",count=5})
+elseif ADD_CAR == "Beta: Train" then
+	table.insert(kit,{name="locomotive",count=1})
+	table.insert(kit,{name="cargo-wagon",count=2})
+	table.insert(kit,{name="fluid-wagon",count=1})
+	table.insert(kit,{name="solid-fuel",count=50})
+	table.insert(kit,{name="rail",count=300})
+	table.insert(kit,{name="train-stop",count=2})
+	table.insert(kit,{name="rail-signal",count=20})
+	table.insert(kit,{name="rail-chain-signal",count=20})
 end
 
 if PERFECTIONIST > 0 then
