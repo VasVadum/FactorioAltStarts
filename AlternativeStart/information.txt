@@ -1,0 +1,128 @@
+Default (Base Game): iron-plate:4,iron-axe:1,burner-mining-drill:1,stone-furnace:1,pistol:1,firearm-magazine:10
+
+
+
+Electric: electric-mining-drill:1,medium-electric-pole:1,stone-furnace:1
+Easy Electric: electric-mining-drill:2,medium-electric-pole:5,stone-furnace:3
+Mega Electric: electric-mining-drill:4,medium-electric-pole:20,stone-furnace:6
+Epic Electric: electric-mining-drill:8,electric-furnace:10,substation:4
+
+Civilian: pistol:1,firearm-magazine:10
+Soldier: submachine-gun:1,shotgun:1,piercing-rounds-magazine:20,piercing-shotgun-shell:20
+Rambo: submachine-gun:1,flamethrower:1,combat-shotgun:1,uranium-rounds-magazine:100,flamethrower-ammo:50,piercing-shotgun-shell:50
+
+Steam: offshore-pump:1,boiler:1,pipe:10,steam-engine:1
+Solar: solar-panel:6,accumulator:3,substation:2
+Super Solar: solar-panel:12,accumulator:6,substation:4
+Insane Solar: solar-panel:24,accumulator:12,substation:8
+
+Power Armor: modular-armor:1,energy-shield-equipment:1,night-vision-equipment:1,battery-equipment:1,solar-panel-equipment:7,exoskeleton-equipment:1
+Better Armor: power-armor-mk2:1,fusion-reactor-equipment:1,battery-mk2-equipment:8,energy-shield-mk2-equipment:5,personal-laser-defense-equipment:5,exoskeleton-equipment:2,personal-roboport-mk2-equipment:2,night-vision-equipment:1
+Research Equipment: lab:1,science-pack-1:50,science-pack-2:50,science-pack-3:50
+Modules: speed-module-3:4,productivity-module-3:4,effectivity-module-3:4
+
+Robots: roboport:1,logistic-robot:10,construction-robot:2
+More Bots: roboport:1,logistic-robot:25,construction-robot:5
+Many Bots: roboport:2,logistic-robot:50,construction-robot:10
+Extreme Bots: roboport:4,logistic-robot:100,construction-robot:20
+
+Chests: logistic-chest-requester:4,logistic-chest-passive-provider:4,logistic-chest-storage:1
+More Chests: logistic-chest-requester:8,logistic-chest-passive-provider:8,logistic-chest-storage:2
+Many Chests: logistic-chest-requester:16,logistic-chest-passive-provider:16,logistic-chest-storage:4
+Storehouses: storehouse-requester:2,storehouse-passive-provider:2,storehouse-storage:1
+Warehouses: warehouse-storage:1
+
+Train Set: locomotive:1,cargo-wagon:2,fluid-wagon:1,solid-fuel:50,rail:300,train-stop:2,rail-signal:20,rail-chain-signal:20
+
+
+
+
+mirv-item:20
+basic-transport-belt
+transport-belt
+
+
+
+
+Useful Starting Items:
+electric-mining-drill
+electric-furnace
+substation
+offshore-pump
+boiler
+pipe
+steam-engine
+solar-panel
+accumulator
+landfill
+
+Weapons:
+pistol
+submachine-gun
+shotgun
+flamethrower
+combat-shotgun
+
+Ammo:
+firearm-magazine
+piercing-rounds-magazine
+piercing-shotgun-shell
+uranium-rounds-magazine
+flamethrower-ammo
+piercing-shotgun-shell
+
+Power Armor:
+modular-armor
+energy-shield-equipment
+night-vision-equipment
+battery-equipment
+solar-panel-equipment
+exoskeleton-equipment
+
+Logistics:
+roboport
+logistic-robot
+construction-robot
+logistic-chest-passive-provider
+logistic-chest-requester
+logistic-chest-storage
+logistic-chest-buffer
+logistic-chest-active-provider
+
+Vehicles:
+car
+tank
+locomotive
+cargo-wagon
+fluid-wagon
+rail
+train-stop
+rail-signal
+rail-chain-signal
+
+Science:
+lab
+science-pack-1
+science-pack-2
+science-pack-3
+
+Modules:
+speed-module-3
+productivity-module-3
+effectivity-module-3
+
+Resources:
+iron-plate
+copper-plate
+solid-fuel
+
+Mods: * Not needed, compatibility with this mod has been added.
+* vehicle-miner
+* unit-remote-control
+warehouse-basic
+warehouse-passive-provider
+warehouse-requester
+warehouse-storage
+storehouse-basic
+storehouse-passive-provider
+storehouse-requester

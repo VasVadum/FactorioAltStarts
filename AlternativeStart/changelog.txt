@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 11/08/2019
+  Fixes:
+    - Crash on load from line 227 resulting in nil.
+  Removed:
+    - if statement checking for bob's mods before letting you use modular port option. Can't make this work right now, resulted in crash.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 11/07/2019
+  Changes:
+    - Removed axe from start.
+    - Renamed science packs because the devs changed the code name for no particular reason other than to break all mods that used them.
+    - Added modular robo port option.
+  New Features:
+    - Input Box for additional items not in the dropdowns.
+    - Placeholder input box for Technologies to start with.
+    - Placeholder input box for items to disable.
+    - Placeholder input box for technologies to disable.
+  Removed:
+    - Money related events, since its not used right now.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 01/30/2018
   Bugfixes:
