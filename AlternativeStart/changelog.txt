@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 01/19/2018
+  Bugfixes:
+    - Fixed an issue with the mod truncicating items in the hotbar, now all items properly go to the correct locations except a few things which are for the moment placed inside the inventory instead of the hotbar.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 01/19/2018
+  Changes:
+    - Created Mod

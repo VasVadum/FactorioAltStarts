@@ -1,0 +1,14 @@
+{
+	"name"        : "AlternativeStart",
+	"version"     : "0.1.0",
+	"title"       : "Alternative Starts",
+	"author"      : "Vas",
+	"contact"     : "Discord: Vas#1890",
+	"homepage"    : "https://mods.factorio.com/mod/AlternativeStart",
+	"description" : "Gives you some options for some alternative starts, please use Mod Settings to select which one you want otherwise you will default to base game start.",
+	"dependencies":
+	[
+		"base >= 0.16.0"
+	],
+	"factorio_version": "0.16"
+}
