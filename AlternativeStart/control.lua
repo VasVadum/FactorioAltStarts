@@ -5,71 +5,167 @@
 ]]--
 
 -- User Settings
-local USE_BASE=				settings.global["basic-kit-base"].value
-local USE_STEAM=			settings.global["basic-kit-steam"].value
-local ADD_EASY=				settings.global["basic-kit-easy"].value
-local ADD_ROBOT=			settings.global["basic-kit-robot"].value
-local ADD_CAR=				settings.global["basic-kit-car"].value
-local ADD_MONEY=			settings.global["basic-kit-money"].value
-local ADD_PERFECTIONIST=	settings.global["basic-kit-perfectionist"].value
+local BASE_KIT=			settings.global["basic-kit-base"].value
+local EQUIPME=			settings.global["basic-kit-equipment"].value
+local POWER_KIT=		settings.global["basic-kit-power"].value
+local ADD_EASY=			settings.global["basic-kit-easy"].value
+local ADD_ROBOTS=		settings.global["basic-kit-robot"].value
+local ADD_ROCHEST=		settings.global["basic-kit-robotchests"].value
+local ADD_CAR=			settings.global["basic-kit-car"].value
+local PERFECTIONIST=	settings.global["basic-kit-perfectionist"].value
+local ADD_MONEY=		settings.global["basic-kit-money"].value
 
 --Start the kit table.
-local inventorykit={
-	{name="iron-plate",count=4}
-}
-local quickbarkit={
-	
+local kit={
+	{name="iron-plate",count=4},
+	{name="iron-axe",count=1}
 }
 
 -- Add stuff to inventory depending on the settings
-if USE_BASE then
-	table.insert(quickbarkit,{name="burner-mining-drill",count=1})
-	table.insert(quickbarkit,{name="stone-furnace",count=1})
+if BASE_KIT == "Base" then
+	table.insert(kit,{name="burner-mining-drill",count=1})
+	table.insert(kit,{name="stone-furnace",count=1})
+elseif BASE_KIT == "Electric" then
+	table.insert(kit,{name="electric-mining-drill",count=1})
+	table.insert(kit,{name="medium-electric-pole",count=1})
+	table.insert(kit,{name="stone-furnace",count=1})
+elseif BASE_KIT == "Easy Electric" then
+	table.insert(kit,{name="electric-mining-drill",count=2})
+	table.insert(kit,{name="medium-electric-pole",count=5})
+	table.insert(kit,{name="stone-furnace",count=3})
+elseif BASE_KIT == "Shamefully Easy Electric" then
+	table.insert(kit,{name="electric-mining-drill",count=4})
+	table.insert(kit,{name="medium-electric-pole",count=20})
+	table.insert(kit,{name="stone-furnace",count=6})
 else
-	table.insert(quickbarkit,{name="electric-mining-drill",count=1})
-	table.insert(quickbarkit,{name="medium-electric-pole",count=1})
+	table.insert(kit,{name="burner-mining-drill",count=1})
+	table.insert(kit,{name="stone-furnace",count=1})
 end
 
-if USE_STEAM then
-	table.insert(quickbarkit,{name="offshore-pump",count=1})
-	table.insert(quickbarkit,{name="boiler",count=1})
-	table.insert(quickbarkit,{name="pipe",count=10})
-	table.insert(quickbarkit,{name="steam-engine",count=1})
-else
-	table.insert(quickbarkit,{name="solar-panel",count=6})
-	table.insert(quickbarkit,{name="accumulator",count=3})
-	table.insert(quickbarkit,{name="substation",count=2})
+-- Equip the player with weapons and ammo, eventually I will even disable research for handheld weapons once I figure out how for an "else" version.
+if EQUIPME == "Civilian" then
+	table.insert(kit,{name="pistol",count=1})
+	table.insert(kit,{name="firearm-magazine",count=10})
+elseif EQUIPME == "Soldier" then
+	table.insert(kit,{name="submachine-gun",count=1})
+	table.insert(kit,{name="shotgun",count=1})
+	table.insert(kit,{name="piercing-rounds-magazine",count=20})
+	table.insert(kit,{name="piercing-shotgun-shell",count=20})
+elseif EQUIPME == "Rambo" then
+	table.insert(kit,{name="submachine-gun",count=1})
+	table.insert(kit,{name="flamethrower",count=1})
+	table.insert(kit,{name="combat-shotgun",count=1})
+	table.insert(kit,{name="uranium-rounds-magazine",count=100})
+	table.insert(kit,{name="flamethrower-ammo",count=50})
+	table.insert(kit,{name="piercing-shotgun-shell",count=50})
 end
 
-if ADD_EASY then
-	table.insert(inventorykit,{name="iron-plate",count=46})
-	table.insert(inventorykit,{name="copper-plate",count=50})
-	table.insert(inventorykit,{name="lab",count=1})
-	table.insert(inventorykit,{name="science-pack-1",count=50})
-	table.insert(inventorykit,{name="science-pack-2",count=50})
-	table.insert(quickbarkit,{name="assembling-machine-2",count=3})
+if POWER_KIT == "Steam" then
+	table.insert(kit,{name="offshore-pump",count=1})
+	table.insert(kit,{name="boiler",count=1})
+	table.insert(kit,{name="pipe",count=10})
+	table.insert(kit,{name="steam-engine",count=1})
+elseif POWER_KIT == "Solar" then
+	table.insert(kit,{name="solar-panel",count=6})
+	table.insert(kit,{name="accumulator",count=3})
+	table.insert(kit,{name="substation",count=2})
+elseif POWER_KIT == "Super Solar" then
+	table.insert(kit,{name="solar-panel",count=12})
+	table.insert(kit,{name="accumulator",count=6})
+	table.insert(kit,{name="substation",count=4})
 end
 
-if ADD_ROBOT then
-	table.insert(quickbarkit,{name="roboport",count=1})
-	table.insert(inventorykit,{name="logistic-robot",count=50})
-	table.insert(inventorykit,{name="construction-robot",count=10})
-	table.insert(inventorykit,{name="logistic-chest-passive-provider",count=4}) --Temporary Inventory - Not Quick
-	table.insert(inventorykit,{name="logistic-chest-storage",count=4})  --Temporary Inventory - Not Quick
-	table.insert(inventorykit,{name="logistic-chest-requester",count=4})  --Temporary Inventory - Not Quick
+if ADD_EASY == "Extra Resources" then
+	table.insert(kit,{name="iron-plate",count=46})
+	table.insert(kit,{name="copper-plate",count=50})
+elseif ADD_EASY == "Power Armor & Modules" then
+	table.insert(kit,{name="modular-armor",count=1})
+	table.insert(kit,{name="energy-shield-equipment",count=1})
+	table.insert(kit,{name="night-vision-equipment",count=1})
+	table.insert(kit,{name="battery-equipment",count=2})
+	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="exoskeleton-equipment",count=1})
+elseif ADD_EASY == "Research Equipment" then
+	table.insert(kit,{name="lab",count=1})
+	table.insert(kit,{name="science-pack-1",count=50})
+	table.insert(kit,{name="science-pack-2",count=50})
+elseif ADD_EASY == "Power Armor, Modules, & Resources" then
+	table.insert(kit,{name="iron-plate",count=46})
+	table.insert(kit,{name="copper-plate",count=50})
+	table.insert(kit,{name="modular-armor",count=1})
+	table.insert(kit,{name="energy-shield-equipment",count=1})
+	table.insert(kit,{name="night-vision-equipment",count=1})
+	table.insert(kit,{name="battery-equipment",count=2})
+	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="exoskeleton-equipment",count=1})
+elseif ADD_EASY == "Ultimate Easy Start" then
+	table.insert(kit,{name="iron-plate",count=46})
+	table.insert(kit,{name="copper-plate",count=50})
+	table.insert(kit,{name="modular-armor",count=1})
+	table.insert(kit,{name="energy-shield-equipment",count=1})
+	table.insert(kit,{name="night-vision-equipment",count=1})
+	table.insert(kit,{name="battery-equipment",count=2})
+	table.insert(kit,{name="solar-panel-equipment",count=5})
+	table.insert(kit,{name="exoskeleton-equipment",count=1})
+	table.insert(kit,{name="lab",count=1})
+	table.insert(kit,{name="science-pack-1",count=50})
+	table.insert(kit,{name="science-pack-2",count=50})
 end
 
-if ADD_CAR then
-	table.insert(quickbarkit,{name="car",count=1}) -- quick
-	table.insert(inventorykit,{name="solid-fuel",count=5})
+if ADD_ROBOTS == "Basic" then
+	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="logistic-robot",count=10})
+	table.insert(kit,{name="construction-robot",count=2})
+	if ADD_ROCHEST then
+		table.insert(kit,{name="logistic-chest-passive-provider",count=3})
+		table.insert(kit,{name="logistic-chest-storage",count=1})
+		table.insert(kit,{name="logistic-chest-requester",count=3})
+	end
+elseif ADD_ROBOTS == "Lots" then
+	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="logistic-robot",count=25})
+	table.insert(kit,{name="construction-robot",count=5})
+	if ADD_ROCHEST then
+		table.insert(kit,{name="logistic-chest-passive-provider",count=6})
+		table.insert(kit,{name="logistic-chest-storage",count=3})
+		table.insert(kit,{name="logistic-chest-requester",count=6})
+	end
+elseif ADD_ROBOTS == "Too Many" then
+	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="logistic-robot",count=50})
+	table.insert(kit,{name="construction-robot",count=10})
+	if ADD_ROCHEST then
+		table.insert(kit,{name="logistic-chest-passive-provider",count=10})
+		table.insert(kit,{name="logistic-chest-storage",count=5})
+		table.insert(kit,{name="logistic-chest-requester",count=10})
+	end
+elseif ADD_ROBOTS == "Too Many ++" then
+	table.insert(kit,{name="roboport",count=1})
+	table.insert(kit,{name="logistic-robot",count=100})
+	table.insert(kit,{name="construction-robot",count=20})
+	if ADD_ROCHEST then
+		table.insert(kit,{name="logistic-chest-passive-provider",count=15})
+		table.insert(kit,{name="logistic-chest-storage",count=10})
+		table.insert(kit,{name="logistic-chest-requester",count=15})
+		table.insert(kit,{name="logistic-chest-active-provider",count=5})
+		table.insert(kit,{name="logistic-chest-buffer",count=5})
+	end
+end
+
+if ADD_CAR == "Car" then
+	table.insert(kit,{name="car",count=1})
+	table.insert(kit,{name="solid-fuel",count=5})
+elseif ADD_CAR == "Tank" then
+	table.insert(kit,{name="tank",count=1})
+	table.insert(kit,{name="solid-fuel",count=5})
+end
+
+if PERFECTIONIST > 0 then
+	table.insert(kit,{name="landfill",count=PERFECTIONIST})
 end
 
 if ADD_MONEY then
-	table.insert(inventorykit,{name="coin",count=50})
-end
-
-if ADD_PERFECTIONIST then
-	table.insert(inventorykit,{name="landfill",count=100}) --Temporary Inventory - Not Quick
+	table.insert(kit,{name="coin",count=50})
 end
 
 script.on_event(defines.events.on_player_created,function(param)
@@ -83,20 +179,8 @@ script.on_event(defines.events.on_player_created,function(param)
 		end)
 	end
 
-	--Add items from the 'quickbarkit' table
-	local inv=p.get_inventory(defines.inventory.player_quickbar)
-	for i,v in pairs(quickbarkit) do
-		inv.insert(v)
+	--Add items from the 'kit' table
+	for i,v in pairs(kit) do
+		p.insert(v)
 	end
-	--When ready, I will have some code here to auto split quickbarkit items after an array is larger than 10 objects.
-	
-	-- We add our items to the player's inventory now.
-	local inv=p.get_inventory(defines.inventory.player_main)
-	for i,v in pairs(inventorykit) do
-		inv.insert(v)
-	end
-	p.get_inventory(defines.inventory.player_tools).insert({name="iron-axe",count=1})
-	p.get_inventory(defines.inventory.player_guns).insert({name="pistol",count=1})
-	p.get_inventory(defines.inventory.player_ammo).insert({name="firearm-magazine",count=10})
-	-- Lastly, we must add the equipment items.  However, this is also going to remain temporarily commented instead.
 end)

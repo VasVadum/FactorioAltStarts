@@ -1,10 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 01/21/2018
+  Bugfixes:
+	- Added missing stone furnace to electric drill option.
+  Changes:
+	- Changed two options from Boolean to Dropdown to give additional choices.
+	- Improved and optimized the script a little to allow better inventory management of your choices.
+	- New options added for weapon starting.
+	- Changed some options from Boolean to Dropdown, allowing different levels of choices.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 01/19/2018
   Bugfixes:
-    - Fixed an issue with the mod truncicating items in the hotbar, now all items properly go to the correct locations except a few things which are for the moment placed inside the inventory instead of the hotbar.
+	- Fixed an issue with the mod truncicating items in the hotbar, now all items properly go to the correct locations except a few things which are for the moment placed inside the inventory instead of the hotbar.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 01/19/2018
   Changes:
-    - Created Mod
+	- Created Mod
