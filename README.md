@@ -52,3 +52,5 @@ Start with the amount of landfill that you want.
 Note: For the time being, I've deleted the language portion of the mod, since it as English only anyway.
 
 Also, because I don't know how to do migrations, I don't know how to save your previous settings before an update, now that I changed setting names and such.  This won't hurt games that have already started, but if you host multiplayer with this mod and update the mod, you will need to set the settings again.  I wanted to put this in the change log, but the change log file refuses to show up in game if you do anything at all different from what the devs did because apparently the devs love to force you to use their exact preferred methods of everything. They hate giving options.
+
+License: https://creativecommons.org/licenses/by-sa/4.0/
