@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 01/30/2018
+  Bugfixes:
+    - Fixed incorrect display order.
+  Changes:
+    - Renamed Shamefully Easy Electric to Mega Electric.
+    - Added "Epic Electric" option that adds even more electric things and even gives you electric furnaces. This option also gives substations and uses substation multiplier.
+    - Added blue science packs to lab start conditions.
+    - Renamed Power Armor option to remove "modules" from the name so I can use it elsewhere.
+    - Added a new modules setting to allow you to start with one of three types of modules or even all of them.
+    - Renamed train option.
+    - Altered the money option to no longer give you a static amount, the new amount given is based on what options you chose, which can drive you into the negative. In which case you'll simply get nothing.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.5
 Date: 01/26/2018
   Changes:

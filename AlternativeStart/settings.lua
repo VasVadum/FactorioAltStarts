@@ -12,8 +12,8 @@ data:extend({
 		localised_description = "You can choose from base game, electric, 2x electric, or 4x electric.",
 		setting_type = "runtime-global",
 		default_value = "Base",
-		allowed_values = {"Base","Electric","Easy Electric","Shamefully Easy Electric"},
-		order = 1
+		allowed_values = {"Base","Electric","Easy Electric","Mega Electric","Epic Electric"},
+		order = "a-a"
 	},
 	{
 		-- Choose what type of military equipment you start with.
@@ -24,7 +24,7 @@ data:extend({
 		setting_type = "runtime-global",
 		default_value = "Civilian",
 		allowed_values = {"None","Civilian","Soldier","Rambo"},
-		order = 2
+		order = "b-b"
 	},
 	{
 		-- Steam or Solar start
@@ -35,7 +35,7 @@ data:extend({
 		setting_type = "runtime-global",
 		default_value = "None",
 		allowed_values = {"None","Steam","Solar","Super Solar","Insane Solar"},
-		order = 3
+		order = "c-c"
 	},
 	{
 		-- 4x the substations
@@ -45,7 +45,7 @@ data:extend({
 		localised_description = "Should we multiply the amount of substations you get by 4? (Only works with options that give substations)",
 		setting_type = "runtime-global",
 		default_value = false,
-		order = 4
+		order = "d-d"
 	},
 	{
 		-- Easy start boost
@@ -55,8 +55,19 @@ data:extend({
 		localised_description = "Choose which type of easy start you will get.",
 		setting_type = "runtime-global",
 		default_value = "Nope",
-		allowed_values = {"Nope","Extra Resources","Power Armor & Modules","Research Equipment","Power Armor, Modules, & Resources","Ultimate Easy Start"},
-		order = 5
+		allowed_values = {"Nope","Resources","Power Armor","Research Equipment","Power Armor & Resources","All"},
+		order = "e-e"
+	},
+	{
+		-- Modules
+		type = "string-setting",
+		name = "basic-kit-module",
+		localised_name = "Do you wish to bring some modules?",
+		localised_description = "Choose which type of modules you brought with you. The options are fairly obvious.",
+		setting_type = "runtime-global",
+		default_value = "None",
+		allowed_values = {"None","Speed","Productivity","Energy Efficiency","All","4x All"},
+		order = "e-f"
 	},
 	{
 		-- Start with bots
@@ -66,8 +77,8 @@ data:extend({
 		localised_description = "Would you like to start with bots?",
 		setting_type = "runtime-global",
 		default_value = "Nope",
-		allowed_values = {"Nope","(pending)","Basic","Lots","Too Many","Too Many ++"},
-		order = 6
+		allowed_values = {"Nope","Basic","Lots","Too Many","Too Many ++"},
+		order = "f-f"
 	},
 	{
 		-- Add chests with your robots
@@ -77,18 +88,18 @@ data:extend({
 		localised_description = "Would you like to add robot logistical chests to your robot selection?",
 		setting_type = "runtime-global",
 		default_value = false,
-		order = 7
+		order = "g-g"
 	},
 	{
 		-- Add a car
 		type = "string-setting",
 		name = "basic-kit-car",
 		localised_name = "Choose a starting vehicle.",
-		localised_description = "Each vehicle also comes with a little bit of solid fuel.",
+		localised_description = "Each vehicle also comes with a little bit of solid fuel. Train option is currently beta, please let me know if I should alter it any.",
 		setting_type = "runtime-global",
 		default_value = "None",
-		allowed_values = {"None","Car","Tank","Beta: Train"},
-		order = 8
+		allowed_values = {"None","Car","Tank","Train"},
+		order = "h-h"
 	},
 	{
 		-- Start with landfill
@@ -100,7 +111,7 @@ data:extend({
 		default_value = 0,
 		maximum_value = 1000,
 		minimum_value = 0,
-		order = 9
+		order = "i-i"
 	},
 	{
 		-- Useless money
@@ -110,6 +121,6 @@ data:extend({
 		localised_description = "So, you're so paranoid that you actually decided to bring your money with you even though its useless here!",
 		setting_type = "runtime-global",
 		default_value = false,
-		order = 10
+		order = "j-j"
 	}
 })
