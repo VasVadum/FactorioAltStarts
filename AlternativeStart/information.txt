@@ -37,6 +37,11 @@ Train Set: locomotive:1,cargo-wagon:2,fluid-wagon:1,solid-fuel:50,rail:300,train
 
 
 
+Robotic Armor Start: modular-armor:1,battery-equipment:3,solar-panel-equipment:11,construction-robot:5,personal-roboport-equipment:1,night-vision-equipment:1
+
+
+
+
 mirv-item:20
 basic-transport-belt
 transport-belt
